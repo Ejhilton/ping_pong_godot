@@ -6,7 +6,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_13lh1"]
 radius = 16.0
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="ball" type="RigidBody2D"]
+collision_layer = 2
+mass = 0.01
+lock_rotation = true
 script = ExtResource("1_qhweg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

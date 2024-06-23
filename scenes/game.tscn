@@ -9,19 +9,21 @@
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_8x7js")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_mt81c")]
+[node name="player1" parent="." instance=ExtResource("1_mt81c")]
+unique_name_in_owner = true
 position = Vector2(76, 307)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("2_pyiwe")]
+[node name="ball" parent="." instance=ExtResource("2_pyiwe")]
 position = Vector2(580, 316)
 gravity_scale = 0.0
 
-[node name="point_zone" parent="." instance=ExtResource("3_pnesb")]
+[node name="p1_point_zone" parent="." instance=ExtResource("3_pnesb")]
 position = Vector2(-314, 324)
 
-[node name="point_zone2" parent="." instance=ExtResource("3_pnesb")]
+[node name="p2_point_zone" parent="." instance=ExtResource("3_pnesb")]
 position = Vector2(1467, 324)
 
 [node name="bounce_border" parent="." instance=ExtResource("4_7sdmf")]
