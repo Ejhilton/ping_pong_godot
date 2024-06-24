@@ -26,3 +26,4 @@ layout_mode = 2
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/play_game" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
