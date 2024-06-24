@@ -1,9 +1,11 @@
 extends Area2D
 
 @onready var player_1 = %player1
+@onready var player_2 = %player2
+
 @onready var timer = $Timer
 @onready var game_manager = %GameManager
-
+var new_game = preload("res://scenes/main_game.tscn")
 
 func _on_body_entered(body):
 	if position.x > 0:
@@ -15,4 +17,4 @@ func _on_body_entered(body):
 
 
 func _on_timer_timeout():
-	get_tree().reload_current_scene()
+	game_manager.reset()

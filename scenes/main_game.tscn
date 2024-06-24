@@ -27,6 +27,7 @@ offset_bottom = -575.0
 text = "Player 2:  0"
 
 [node name="ball" parent="." instance=ExtResource("3_3833o")]
+unique_name_in_owner = true
 position = Vector2(580, 316)
 gravity_scale = 0.0
 
@@ -45,6 +46,7 @@ unique_name_in_owner = true
 position = Vector2(76, 307)
 
 [node name="player2" parent="players" instance=ExtResource("5_jm74v")]
+unique_name_in_owner = true
 position = Vector2(1072, 317)
 playerID = 2
 

@@ -6,6 +6,7 @@ var constantXSpeed = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	position = global_settings.ball_start_position
 	linear_velocity += startForce
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
