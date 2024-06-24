@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf7tptnopp3vl"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_4dfp1"]
+[ext_resource type="PackedScene" uid="uid://dvlsr6rtp8c60" path="res://scenes/score_label.tscn" id="2_tvh62"]
+[ext_resource type="PackedScene" uid="uid://bikqndv88s0nt" path="res://scenes/ball.tscn" id="3_3833o"]
+[ext_resource type="PackedScene" uid="uid://xhf51wpw0olb" path="res://scenes/point_zone.tscn" id="4_0r1xf"]
+[ext_resource type="PackedScene" uid="uid://ca65x4lj1f7h" path="res://scenes/player.tscn" id="5_jm74v"]
+[ext_resource type="PackedScene" uid="uid://bx8wicjvf5qh8" path="res://scenes/bounce_border.tscn" id="6_olpqh"]
+
+[node name="main_game" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_4dfp1")
+
+[node name="ScoreLabel" parent="GameManager" instance=ExtResource("2_tvh62")]
+offset_left = 35.0
+offset_top = 2.0
+offset_right = -933.0
+offset_bottom = -573.0
+text = "Player 1:  0"
+
+[node name="ScoreLabel2" parent="GameManager" instance=ExtResource("2_tvh62")]
+offset_left = 925.0
+offset_right = -43.0
+offset_bottom = -575.0
+text = "Player 2:  0"
+
+[node name="ball" parent="." instance=ExtResource("3_3833o")]
+position = Vector2(580, 316)
+gravity_scale = 0.0
+
+[node name="point_zones" type="Node" parent="."]
+
+[node name="p1_point_zone" parent="point_zones" instance=ExtResource("4_0r1xf")]
+position = Vector2(-314, 324)
+
+[node name="p2_point_zone" parent="point_zones" instance=ExtResource("4_0r1xf")]
+position = Vector2(1467, 324)
+
+[node name="players" type="Node" parent="."]
+
+[node name="player1" parent="players" instance=ExtResource("5_jm74v")]
+unique_name_in_owner = true
+position = Vector2(76, 307)
+
+[node name="player2" parent="players" instance=ExtResource("5_jm74v")]
+position = Vector2(1072, 317)
+playerID = 2
+
+[node name="bounce_borders" type="Node" parent="."]
+
+[node name="bounce_border" parent="bounce_borders" instance=ExtResource("6_olpqh")]
+position = Vector2(588, 0)
+rotation = -3.14159
+
+[node name="bounce_border2" parent="bounce_borders" instance=ExtResource("6_olpqh")]
+position = Vector2(570, 651)
+
+[node name="labels" type="Node" parent="."]

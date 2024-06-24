@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="ping_pong"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-game_manager="*res://scripts/game_manager.gd"
+global_settings="*res://scripts/global_settings.gd"
 
 [input]
 

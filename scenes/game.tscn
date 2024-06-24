@@ -1,38 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://mrmgpf18j1bj"]
+[gd_scene load_steps=3 format=3 uid="uid://mrmgpf18j1bj"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_8x7js"]
-[ext_resource type="PackedScene" uid="uid://ca65x4lj1f7h" path="res://scenes/player.tscn" id="1_mt81c"]
-[ext_resource type="PackedScene" uid="uid://bikqndv88s0nt" path="res://scenes/ball.tscn" id="2_pyiwe"]
-[ext_resource type="PackedScene" uid="uid://xhf51wpw0olb" path="res://scenes/point_zone.tscn" id="3_pnesb"]
-[ext_resource type="PackedScene" uid="uid://bx8wicjvf5qh8" path="res://scenes/bounce_border.tscn" id="4_7sdmf"]
+[ext_resource type="PackedScene" uid="uid://cf7tptnopp3vl" path="res://scenes/main_game.tscn" id="1_vysrh"]
+[ext_resource type="PackedScene" uid="uid://bofkfb45kcc4w" path="res://scenes/main_menu.tscn" id="2_4om6n"]
 
 [node name="Game" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_8x7js")
+[node name="main_game" parent="." instance=ExtResource("1_vysrh")]
 
-[node name="player1" parent="." instance=ExtResource("1_mt81c")]
-unique_name_in_owner = true
-position = Vector2(76, 307)
-
-[node name="player2" parent="." instance=ExtResource("1_mt81c")]
-position = Vector2(1072, 317)
-playerID = 2
-
-[node name="ball" parent="." instance=ExtResource("2_pyiwe")]
-position = Vector2(580, 316)
-gravity_scale = 0.0
-
-[node name="p1_point_zone" parent="." instance=ExtResource("3_pnesb")]
-position = Vector2(-314, 324)
-
-[node name="p2_point_zone" parent="." instance=ExtResource("3_pnesb")]
-position = Vector2(1467, 324)
-
-[node name="bounce_border" parent="." instance=ExtResource("4_7sdmf")]
-position = Vector2(588, 0)
-rotation = -3.14159
-
-[node name="bounce_border2" parent="." instance=ExtResource("4_7sdmf")]
-position = Vector2(570, 651)
+[node name="main_menu" parent="." instance=ExtResource("2_4om6n")]
