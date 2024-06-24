@@ -5,9 +5,9 @@ const SPEED = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if playerID == 1:
-		position = global_settings.p1_start_position
+		global_settings.p1_start_position = position
 	else:
-		position = global_settings.p2_start_position
+		global_settings.p2_start_position = position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
