@@ -9,5 +9,5 @@ func add_point(player):
 		print("player 1: " + str(p1_score))
 	else:
 		p2_score += 1
-		print(p2_score)
+		print("player 2: " + str(p2_score))
 

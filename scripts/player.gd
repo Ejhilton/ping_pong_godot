@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 const SPEED = 10
-
+@export var playerID = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,7 +13,7 @@ func _process(delta):
 	
 func _physics_process(delta):
 	
-	var direction = Input.get_axis("move_up", "move_down")
+	var direction = Input.get_axis("move_up_" + str(playerID),"move_down_" + str(playerID))
 	
 	if direction:
 		linear_velocity.y = direction * SPEED
