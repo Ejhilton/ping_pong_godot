@@ -2,7 +2,6 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_gmdwj"]
 font_size = 30
-font_color = Color(0.819584, 0.109838, 0.823581, 1)
 
 [node name="ScoreLabel" type="Label"]
 z_index = 5
@@ -11,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Player X: score"
+text = "Player 1 Score: "
 label_settings = SubResource("LabelSettings_gmdwj")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cf7tptnopp3vl"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_4dfp1"]
-[ext_resource type="PackedScene" uid="uid://dvlsr6rtp8c60" path="res://scenes/score_label.tscn" id="2_tvh62"]
+[ext_resource type="PackedScene" uid="uid://bku1x2gdok4av" path="res://scenes/in_game_ui.tscn" id="2_35usd"]
 [ext_resource type="PackedScene" uid="uid://bikqndv88s0nt" path="res://scenes/ball.tscn" id="3_3833o"]
 [ext_resource type="PackedScene" uid="uid://xhf51wpw0olb" path="res://scenes/point_zone.tscn" id="4_0r1xf"]
 [ext_resource type="PackedScene" uid="uid://ca65x4lj1f7h" path="res://scenes/player.tscn" id="5_jm74v"]
@@ -13,18 +13,7 @@
 unique_name_in_owner = true
 script = ExtResource("1_4dfp1")
 
-[node name="ScoreLabel" parent="GameManager" instance=ExtResource("2_tvh62")]
-offset_left = 35.0
-offset_top = 2.0
-offset_right = -933.0
-offset_bottom = -573.0
-text = "Player 1:  0"
-
-[node name="ScoreLabel2" parent="GameManager" instance=ExtResource("2_tvh62")]
-offset_left = 925.0
-offset_right = -43.0
-offset_bottom = -575.0
-text = "Player 2:  0"
+[node name="in_game_ui" parent="GameManager" instance=ExtResource("2_35usd")]
 
 [node name="ball" parent="." instance=ExtResource("3_3833o")]
 unique_name_in_owner = true
@@ -60,3 +49,5 @@ rotation = -3.14159
 position = Vector2(570, 651)
 
 [node name="labels" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

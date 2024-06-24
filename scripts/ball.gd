@@ -1,11 +1,19 @@
 extends RigidBody2D
 
+
+var minXForce = 100
+var maxXForce = 200
+
+var minYForce = 5
+var maxYForce = 30
+
 var startForce = Vector2(-100,0)
 var angleScaler = 10
 var constantXSpeed = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	startForce = self.generate_random_force()
 	position = global_settings.ball_start_position
 	linear_velocity += startForce
 	
@@ -31,3 +39,16 @@ func _physics_process(delta):
 		linear_velocity.x = -constantXSpeed
 	else:
 		linear_velocity.x = constantXSpeed
+
+func generate_random_force():
+	var randomXForce = randi() % (maxXForce - minXForce + 1) + minXForce
+	var randomYForce = randi() % (maxYForce - minYForce + 1) + minYForce
+	
+	if randf() < 0.5:
+		randomXForce = -randomXForce
+	
+	if randf() < 0.5:
+		randomYForce = -randomXForce
+	
+	return Vector2(randomXForce, randomYForce)
+	

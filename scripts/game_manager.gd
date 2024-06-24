@@ -1,7 +1,8 @@
 extends Node
 
-@onready var score_label = $ScoreLabel
-@onready var score_label_2 = $ScoreLabel2
+@onready var in_game_ui = $in_game_ui
+@onready var score_label = $in_game_ui/%ScoreLabel
+@onready var score_label_2 = $in_game_ui/%ScoreLabel2
 @onready var player_1 = %player1
 @onready var player_2 = %player2
 @onready var ball = %ball
@@ -24,3 +25,4 @@ func reset():
 	player_1.position = global_settings.p1_start_position
 	player_2.position = global_settings.p2_start_position
 	ball.position = global_settings.ball_start_position
+	ball.linear_velocity = ball.generate_random_force()

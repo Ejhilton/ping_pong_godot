@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bku1x2gdok4av"]
+
+[ext_resource type="PackedScene" uid="uid://dvlsr6rtp8c60" path="res://scenes/score_label.tscn" id="1_7d172"]
+
+[node name="in_game_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+offset_right = 1159.0
+offset_bottom = 62.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 660
+columns = 2
+
+[node name="ScoreLabel" parent="CanvasLayer/MarginContainer/GridContainer" instance=ExtResource("1_7d172")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ScoreLabel2" parent="CanvasLayer/MarginContainer/GridContainer" instance=ExtResource("1_7d172")]
+unique_name_in_owner = true
+layout_mode = 2
