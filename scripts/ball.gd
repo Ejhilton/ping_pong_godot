@@ -1,4 +1,5 @@
 extends RigidBody2D
+@onready var trail = $"../ball_trail"
 
 
 var minXForce = 100
@@ -10,6 +11,7 @@ var maxYForce = 30
 var startForce = Vector2(-100,0)
 var angleScaler = 10
 var constantXSpeed = 200
+const MAX_TRAIL_POINTS = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +22,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
+	
 func _physics_process(delta):
 	var collision = move_and_collide(linear_velocity * delta)
 	if collision:
@@ -39,7 +41,13 @@ func _physics_process(delta):
 		linear_velocity.x = -constantXSpeed
 	else:
 		linear_velocity.x = constantXSpeed
-
+	
+	if trail:
+		if trail.get_point_count() > 50:
+			trail.remove_point(0)
+		trail.add_point(global_position)
+	print(constantXSpeed)
+	
 func generate_random_force():
 	var randomXForce = randi() % (maxXForce - minXForce + 1) + minXForce
 	var randomYForce = randi() % (maxYForce - minYForce + 1) + minYForce
@@ -52,3 +60,7 @@ func generate_random_force():
 	
 	return Vector2(randomXForce, randomYForce)
 	
+
+
+func _on_timer_timeout():
+	constantXSpeed += 10

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cf7tptnopp3vl"]
+[gd_scene load_steps=8 format=3 uid="uid://cf7tptnopp3vl"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_4dfp1"]
 [ext_resource type="PackedScene" uid="uid://bku1x2gdok4av" path="res://scenes/in_game_ui.tscn" id="2_35usd"]
@@ -6,17 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://xhf51wpw0olb" path="res://scenes/point_zone.tscn" id="4_0r1xf"]
 [ext_resource type="PackedScene" uid="uid://ca65x4lj1f7h" path="res://scenes/player.tscn" id="5_jm74v"]
 [ext_resource type="PackedScene" uid="uid://bx8wicjvf5qh8" path="res://scenes/bounce_border.tscn" id="6_olpqh"]
+[ext_resource type="PackedScene" uid="uid://clrads1q5a733" path="res://scenes/ball_trail.tscn" id="7_1ftoh"]
 
 [node name="main_game" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 script = ExtResource("1_4dfp1")
 
 [node name="in_game_ui" parent="GameManager" instance=ExtResource("2_35usd")]
 
 [node name="ball" parent="." instance=ExtResource("3_3833o")]
 unique_name_in_owner = true
+z_index = 2
+z_as_relative = false
 position = Vector2(580, 316)
 gravity_scale = 0.0
 
@@ -51,3 +55,5 @@ position = Vector2(570, 651)
 [node name="labels" type="Node" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ball_trail" parent="." instance=ExtResource("7_1ftoh")]

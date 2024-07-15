@@ -6,6 +6,7 @@ extends Node
 @onready var player_1 = %player1
 @onready var player_2 = %player2
 @onready var ball = %ball
+@onready var ball_trail = $"../ball_trail"
 
 
 func _ready():
@@ -26,3 +27,26 @@ func reset():
 	player_2.position = global_settings.p2_start_position
 	ball.position = global_settings.ball_start_position
 	ball.linear_velocity = ball.generate_random_force()
+	ball_trail.clear_points()
+	ball.constantXSpeed = 200
+
+# Flag to track the pause state
+var is_paused = false
+
+func _input(event):
+	# Toggle the pause state when the "Pause" key is pressed
+	if event.is_action_pressed("pause"):
+		toggle_pause()
+
+func toggle_pause():
+	is_paused = !is_paused
+	get_tree().paused = is_paused
+	# You can add additional logic here, such as displaying a pause menu
+
+func pause():
+	is_paused = true
+	get_tree().paused = true
+
+func unpause():
+	is_paused = false
+	get_tree().paused = false
