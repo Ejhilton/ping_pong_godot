@@ -23,12 +23,14 @@ func add_point(player):
 
 
 func reset():
-	player_1.position = global_settings.p1_start_position
-	player_2.position = global_settings.p2_start_position
-	ball.position = global_settings.ball_start_position
-	ball.linear_velocity = ball.generate_random_force()
-	ball_trail.clear_points()
-	ball.constantXSpeed = 200
+	var new_game = preload("res://scenes/main_game.tscn").instantiate()
+	get_tree().root.add_child(new_game)
+	get_parent().queue_free()
+	
+	
+	
+	
+	
 
 # Flag to track the pause state
 var is_paused = false

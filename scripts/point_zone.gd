@@ -5,9 +5,10 @@ extends Area2D
 
 @onready var timer = $Timer
 @onready var game_manager = %GameManager
-var new_game = preload("res://scenes/main_game.tscn")
+@onready var point_sound = $point_sound
 
 func _on_body_entered(body):
+	point_sound.play()
 	if position.x > 0:
 		game_manager.add_point(1)
 	else:

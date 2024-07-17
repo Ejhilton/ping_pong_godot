@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://mrmgpf18j1bj"]
+[gd_scene load_steps=3 format=3 uid="uid://mrmgpf18j1bj"]
 
 [ext_resource type="PackedScene" uid="uid://bofkfb45kcc4w" path="res://scenes/main_menu.tscn" id="2_4om6n"]
+[ext_resource type="PackedScene" uid="uid://bdvqj4kiegtlv" path="res://scenes/game_music.tscn" id="2_kqqex"]
 
 [node name="Game" type="Node2D"]
 
 [node name="main_menu" parent="." instance=ExtResource("2_4om6n")]
+
+[node name="game_music" parent="." instance=ExtResource("2_kqqex")]

@@ -2,7 +2,7 @@
 
 [sub_resource type="Gradient" id="Gradient_3hi3b"]
 offsets = PackedFloat32Array(0.28, 0.926667)
-colors = PackedColorArray(0.898723, 0.409498, 3.85046e-07, 1, 0.054902, 1, 1, 1)
+colors = PackedColorArray(0, 0.286263, 0.204921, 1, 0.054902, 1, 1, 1)
 
 [node name="trail" type="Line2D"]
 default_color = Color(0.396045, 0.99151, 0.890708, 1)

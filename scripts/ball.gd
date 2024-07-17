@@ -1,5 +1,6 @@
 extends RigidBody2D
 @onready var trail = $"../ball_trail"
+@onready var bounce_sound = $bounce_sound
 
 
 var minXForce = 100
@@ -27,6 +28,7 @@ func _physics_process(delta):
 	var collision = move_and_collide(linear_velocity * delta)
 	if collision:
 		if collision.get_collider() is RigidBody2D:
+			
 			var potential_bounce = linear_velocity.bounce(collision.get_normal())
 			var direction_collision_to_center = collision.get_collider().position - position
 			var angle_to_center = direction_collision_to_center.angle() * angleScaler
@@ -46,8 +48,11 @@ func _physics_process(delta):
 		if trail.get_point_count() > 50:
 			trail.remove_point(0)
 		trail.add_point(global_position)
-	print(constantXSpeed)
 	
+	if collision:
+		if collision.get_collider() is RigidBody2D or collision.get_collider() is StaticBody2D:
+			bounce_sound.play()
+			
 func generate_random_force():
 	var randomXForce = randi() % (maxXForce - minXForce + 1) + minXForce
 	var randomYForce = randi() % (maxYForce - minYForce + 1) + minYForce

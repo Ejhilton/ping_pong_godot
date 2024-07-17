@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdvqj4kiegtlv"]
+
+[ext_resource type="AudioStream" uid="uid://dqlnyjk3mb0jo" path="res://assets/pixelated-dreams-music.mp3" id="1_cw5qf"]
+
+[node name="game_music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_cw5qf")

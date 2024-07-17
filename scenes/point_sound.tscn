@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvm4sb6vfiom1"]
+
+[ext_resource type="AudioStream" uid="uid://b08853wkh2bt5" path="res://assets/point.mp3" id="1_1psae"]
+
+[node name="point_sound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_1psae")
